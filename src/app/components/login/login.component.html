@@ -1,0 +1,11 @@
+<div class="loginform">
+  <p-floatLabel>
+    <input pInputText [(ngModel)]="pseudo" id="pseudo" />
+    <label for="pseudo">Votre pseudo</label>
+  </p-floatLabel>
+  <p-floatLabel>
+    <input pInputText type="password" [(ngModel)]="pwd" id="pwd" />
+    <label for="pwd">Votre mot de passe</label>
+  </p-floatLabel>
+  <p-button (click)="login()" severity="success" size="small" >Connexion</p-button>
+</div>

@@ -1,0 +1,23 @@
+<div class="content">
+  <p-fieldset legend="Liste des fans">
+    <p-table [value]="listeFan">
+      <ng-template pTemplate="header">
+        <tr>
+          <td>Nom</td>
+          <td></td>
+        </tr>
+      </ng-template>
+
+      <ng-template pTemplate="body" let-fan let-i="rowIndex">
+        <tr>
+          <td>{{fan.nom}}</td>
+          <td><p-button severity="info" (click)="showDetail(i)">Détail</p-button></td>
+        </tr>
+      </ng-template>
+
+    </p-table>
+  </p-fieldset>
+  <p-fieldset legend="Détail">
+    <app-fanprofile [index]="selectedIndex"></app-fanprofile>
+  </p-fieldset>
+</div>

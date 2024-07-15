@@ -1,0 +1,39 @@
+<p-card>
+  <ng-template pTemplate="header">
+    Création d'un profil
+  </ng-template>
+  <ng-template pTemplate="body">
+    <form [formGroup]="fg" class="myform" (ngSubmit)="onSubmit()">
+      <p-floatLabel>
+        <input pInputText id="username" formControlName="nom" />
+        <label for="username">Votre nom</label>
+      </p-floatLabel>
+      <p-floatLabel>
+        <input pInputText type="password" id="password" formControlName="password" />
+        <label for="password">Le mot de passe</label>
+      </p-floatLabel>
+      <p-floatLabel>
+        <p-calendar type="date" id="password" formControlName="dateNaissance"></p-calendar>
+        <label for="password">Date de naissance</label>
+      </p-floatLabel>
+      <hr/>
+      <p-fieldset>
+        <ng-template pTemplate="header">
+          <span>Série &nbsp;
+            <p-button type="button" icon="pi pi-plus" size="small" (click)="addSerieToList()"/>
+          </span>
+        </ng-template>
+
+          coucou
+          <div formArrayName="listeSerie">
+          <div *ngFor="let s of getSerieArray().controls; let i = index;">
+            Série {{i + 1}} <p-dropdown [formControlName]="i" [options]="listeSerie" optionLabel="titre"></p-dropdown>
+
+          </div>
+        </div>
+
+      </p-fieldset>
+      <p-button severity="success" [rounded]="true" type="submit">Valider</p-button>
+    </form>
+  </ng-template>
+</p-card>

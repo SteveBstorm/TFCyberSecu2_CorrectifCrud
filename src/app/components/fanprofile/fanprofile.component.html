@@ -1,0 +1,10 @@
+<h3>Profil de {{currentFan.nom}}</h3>
+<p-card>
+  <p>Date de naissance : {{currentFan.dateNaissance | date : 'dd-MM-yyyy'}}</p>
+
+  <ul>
+    <li *ngFor="let s of currentFan.listeSerie">
+      <span (click)="showSerie(s.titre)" style="cursor: pointer;">{{s.titre}}</span>
+    </li>
+  </ul>
+</p-card>

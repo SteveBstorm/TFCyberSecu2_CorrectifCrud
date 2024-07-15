@@ -1,0 +1,10 @@
+.content {
+  display : flex;
+  gap : 30px;
+  flex-direction: row;
+
+}
+
+p-fieldset {
+  min-width: 40%;
+}
